@@ -9,8 +9,8 @@ const getLeaderboard = async (ctx) => {
   const leaderboard = topUsers.map(({ bestResult, username }, index) => ({
     position: index + 1,
     name: username,
-    score: bestResult.score,
-    time: bestResult.time,
+    score: bestResult?.score || null,
+    time: bestResult?.time || null,
   }));
 
   ctx.body = leaderboard;
