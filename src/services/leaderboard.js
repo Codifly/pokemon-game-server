@@ -3,7 +3,7 @@ import userRepository from '../data/userRepository.js';
 const getLeaderboard = async (ctx) => {
   const topUsers = await userRepository.find({}, {
     ['bestResult.score']: 'desc',
-    ['bestResult.time']: 'desc'
+    ['bestResult.time']: 'asc'
   });
 
   const leaderboard = topUsers.map(({ bestResult, username }, index) => ({
