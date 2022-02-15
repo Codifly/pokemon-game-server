@@ -2,6 +2,7 @@ import 'dotenv/config';
 
 import Koa from 'koa';
 import bodyParser from 'koa-bodyparser';
+import cors from '@koa/cors';
 import mongoose from 'mongoose';
 
 import authorizationRoutes from './src/web/authorization.js';
@@ -17,6 +18,7 @@ const DB_NAME = process.env.DB_NAME;
 
 async function start() {
   const app = new Koa();
+  app.use(cors())
 
   await mongoose.connect(`mongodb+srv://${DB_USER_NAME}:${DB_USER_PASSWORD}@${DB_URL}/${DB_NAME}`)
 

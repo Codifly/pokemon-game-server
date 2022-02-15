@@ -11,6 +11,7 @@
   "author": "Codifly",
   "license": "ISC",
   "dependencies": {
+    "@koa/cors": "^3.1.0",
     "@koa/router": "^10.1.1",
     "crypto": "^1.0.1",
     "dotenv": "^10.0.0",
